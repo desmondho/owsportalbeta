@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OWS Web Portal Beta 2</title>
+
+	<link rel="stylesheet" href="css/leaflet/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/leaflet/leaflet.ie.css" /><![endif]-->
+	<script src="js/leaflet/leaflet.js"></script>
+	
+	<link rel="stylesheet" href="css/main/map.css" />
+	<link rel="stylesheet" href="css/main/docker.css" />
+	<script type="text/javascript" src="js/jquery/jquery-1.5.1.js"></script>
+	
+	<script type="text/javascript" src="js/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/main/docker.js"></script>
+
+	
+</head>
+<body>
+<!-- map here-->
+	<div id="map"></div>
+
+	<script type="text/javascript">
+		var map = new L.Map('map');
+
+		var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/d4fc77ea4a63471cab2423e66626cbb6/{styleId}/256/{z}/{x}/{y}.png',
+			cloudmadeAttribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+			cloudmade = new L.TileLayer(cloudmadeUrl, {styleId: 997, attribution: cloudmadeAttribution}),
+			cloudmade2 = new L.TileLayer(cloudmadeUrl, {styleId: 998, attribution: cloudmadeAttribution});
+
+		var nexrad = new L.TileLayer.WMS("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+			layers: 'nexrad-n0r-900913',
+			format: 'image/png',
+			transparent: false,
+			attribution: "Weather data &copy; 2011 IEM Nexrad",
+			opacity: 0.4
+		});
+
+		var bounds = new L.LatLngBounds(new L.LatLng(32, -126), new L.LatLng(50, -64));
+
+		map.addLayer(cloudmade).addLayer(nexrad).fitBounds(bounds);
+
+		L.control.layers({"CM": cloudmade, "CM2": cloudmade2}, {"NexRad": nexrad}).addTo(map);
+	</script>
+	
+<!-- message tag
+<div id="_umsg" class="umsg"></div>
+-->
+	<div id="dockNSEW" class="dockcontainer"> 
+    <div id="_dockZoneWest" class="dockZone dockZoneWest"></div>
+
+    
+    <div id="FloatingPanel_1" class="panel floatpanel ui-draggable ui-resizable" style="height: 100px; width: 100px; top: 10px; left: 10px;">
+    Drag-n-Dock Me
+    <div class="ui-resizable-handle ui-resizable-e"></div>
+    <div class="ui-resizable-handle ui-resizable-s"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1001;"></div>
+    </div>
+</div>
+</body>
+</html>

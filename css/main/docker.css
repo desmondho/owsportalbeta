@@ -1,0 +1,173 @@
+.umsg
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+    color: red;
+
+}
+
+.dockcontainer{
+    position: absolute;
+    display: block;
+    border-left: 0px solid #999999;
+    border-radius: 4px 4px 4px 4px;
+	border-top: 0px solid #999999;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+.floatpanel {
+    background-color: #DDDDDD;
+    border: 2px solid grey;
+    color: Black;
+    cursor: move;
+    display: block;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    left: 10px;
+    top: 10px;
+    width: 100px;
+}
+.floatpanel
+{
+    position: relative;
+    display: block;
+    text-align: center;
+    cursor: move;
+    border: 2px solid grey;
+    color: Black;
+    background-color: #DDDDDD;
+}
+.draggingpanel
+{
+    position: relative;
+    display: block;
+    text-align: center;
+    cursor: move;
+    border: 4px dashed red;
+    color: Red;
+    background-color: #DDDDDD;    
+    /*opacity: 0.5;*/
+}
+.dockedpanel
+{
+    position: relative;
+    display: block;
+    text-align: center;
+    cursor: move;
+    border: 2px solid black;
+    color: Black;
+    background-color: #AAAAAA;
+}
+
+.dockZoneNorth
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    border: 0px dashed grey;
+}
+.dockZoneEast
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+    border: 0px dashed grey;
+}
+.dockZoneWest
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    border: 0px dashed grey;
+}
+.dockZoneSouth
+{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20%;
+    border: 0px dashed grey;
+}
+.dockZoneHighlight
+{
+    border: 2px dashed blue;
+}
+.dockableDraggable
+{
+    /*opacity: 0.1;*/
+}
+.dockNorth
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20%;    
+    text-align: center;
+    cursor: move;
+    border: 2px solid grey;
+    color: Black;
+    background-color: #DDDDDD;     
+}
+.dockEast
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20%;    
+    text-align: center;
+    cursor: move;
+    border: 2px solid grey;
+    color: Black;
+    background-color: #DDDDDD;     
+}
+.dockWest
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20%;    
+    text-align: center;
+    cursor: move;
+    border: 2px solid grey;
+    color: Black;
+    background-color: #DDDDDD;     
+}
+.dockSouth
+{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20%;    
+    text-align: center;
+    cursor: move;
+    border: 2px solid grey;
+    color: Black;
+    background-color: #DDDDDD;     
+}
+
