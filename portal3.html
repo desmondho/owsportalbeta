@@ -83,7 +83,10 @@
 		</style>
 	<script>
    $(document).ready(function() {
-      $('#dialog_window_1').dialog({
+      $('#dialog_window_navi').dialog({
+   position: [20,100],
+   width: 250,
+   height: 600,
    closeOnEscape: false,
    open: function(event, ui) { $(".ui-dialog-titlebar-close", ui.dialog).hide(); }
 });
@@ -135,6 +138,16 @@ $.ui.dialog.prototype._init = function() {
 	<div id="map"></div>
 
 	<script type="text/javascript">
+	$.get("data/state-outlines_20m.json", function(data) {
+	
+	alert("geojson file loaded");
+	
+	//When GeoJSON is loaded
+	var geojsonLayer = new L.GeoJSON(data);		//New GeoJSON layer
+	map.addLayer(geojsonLayer);			//Add layer to map	
+
+});
+
 		var map = new L.Map('map');
 
 		var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/d4fc77ea4a63471cab2423e66626cbb6/{styleId}/256/{z}/{x}/{y}.png',
@@ -157,7 +170,8 @@ $.ui.dialog.prototype._init = function() {
 		L.control.layers({"CM": cloudmade, "CM2": cloudmade2}, {"NexRad": nexrad}).addTo(map);
 	</script>
 	<div id="dialog_window_minimized_container"></div>
-		<div id="dialog_window_1" class="dialog_window" title="<code>Navigation Menu</code>">
+	<div>
+		<div id="dialog_window_navi" class="dialog_window" title="<code>Navigation Menu</code>">
 		
 			<table class="dialog_form">
 				<tr><th>
